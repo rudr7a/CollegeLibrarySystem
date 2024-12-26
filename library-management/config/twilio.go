@@ -13,8 +13,8 @@ var client *twilio.RestClient
 // InitTwilio initializes the Twilio client
 func InitTwilio() {
 	client = twilio.NewRestClientWithParams(twilio.ClientParams{
-		Username: "ACbe643eeee9679f37d5d21248f221b2f8", // Your Twilio Account SID
-		Password: "d0db2b3bcb850f5a2600c085712a8c33",  // Your Twilio Auth Token
+		Username: "", // Your Twilio Account SID
+		Password: "",  // Your Twilio Auth Token
 	})
 
 	if client == nil {
@@ -30,7 +30,7 @@ func SendSMS(to, message string) error {
 	// Create the message parameters
 	params := &api.CreateMessageParams{}
 	params.SetTo(to)
-	params.SetFrom("+12184844884") // Your Twilio phone number
+	params.SetFrom("") // Your Twilio phone number
 	params.SetBody(message)
 
 	// Send the message using the Twilio client
