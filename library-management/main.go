@@ -16,7 +16,7 @@ var DB *gorm.DB
 
 // ConnectDatabase establishes a connection to the PostgreSQL database
 func ConnectDatabase() {
-	dsn := "host=127.0.0.1 user=postgres password=admin dbname=library port=5432 sslmode=disable"
+	dsn := ""
 	var err error
 	DB, err = gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
